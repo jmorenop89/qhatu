@@ -39,52 +39,15 @@
         <div class="row">
             <div class="col-12">
                 <!-- Form -->
-                <form>
-                    <div class="form-group">
-                        <label for="">Example label</label>
-                        <input type="text" class="form-control" id="" placeholder="Example input">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Another label</label>
-                        <input type="text" class="form-control" id="" placeholder="Another input">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                @include('layout.form')
+                <!-- Form -->
             </div>
         </div>
+        <div class="clearfix">&nbsp;</div>
         <div class="row">
             <div class="col-12">
                 <!-- Table -->
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+                @include('layout.table')
                 <!-- Table -->
             </div>
         </div>
