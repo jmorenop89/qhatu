@@ -5,5 +5,5 @@
 @endsection
 
 @section('container')
-    @include('layout.table')
+    @include('category.table')
 @endsection

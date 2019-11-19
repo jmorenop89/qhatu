@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('category.index');
+    return view('category.create');
 });
