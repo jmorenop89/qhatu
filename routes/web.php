@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('category.create');
 });
+
+Route::group(['prefix'=>'category'],function(){
+    Route::get('/',['as'=>'miex','uses'=>'CategoryController@index']);
+    Route::get('agregar',['as'=>'category.create','uses'=>'CategoryController@create']);
+    Route::post('agregar',['as'=>'category.create','uses'=>'CategoryController@store']);
+});
