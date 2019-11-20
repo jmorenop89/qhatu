@@ -18,7 +18,7 @@ class CategoryController extends Controller
         # select * from 
         $models = Category::all();
         #dd($models);
-        return view('category.index');
+        return view('category.index',compact('models'));
     }
 
     /**
@@ -42,7 +42,8 @@ class CategoryController extends Controller
         $data = $request->all();
         $data['slug'] = str_slug($data['name']);
         $data['status'] = 1;
-        dd($data);
+        Category::create($data);
+        return redirect()->route('category.index');
     }
 
     /**
@@ -87,6 +88,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = Category::findOrFail($id);
+        $model->delete();
+        return redirect()->route('category.index');
     }
 }
