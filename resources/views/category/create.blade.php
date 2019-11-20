@@ -5,7 +5,7 @@
 @endsection
 
 @section('container')
-    <form action="" method="post">
+    <form action="{{ route('category.store') }}" method="post">
         @include('category.fields')
         <div class="form-group row">
             <div class="col-sm-12">

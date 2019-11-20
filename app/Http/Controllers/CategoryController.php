@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        # select * from 
         $models = Category::all();
-        dd($models);
+        #dd($models);
         return view('category.index');
     }
 
@@ -26,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('category.create');
     }
 
     /**
@@ -35,9 +37,12 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = str_slug($data['name']);
+        $data['status'] = 1;
+        dd($data);
     }
 
     /**
