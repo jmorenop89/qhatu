@@ -65,7 +65,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Category::findOrFail($id);
+        return view('category.edit',compact('model'));
     }
 
     /**
@@ -75,9 +76,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = str_slug($data['name']);
+        $model = Category::findOrFail($id);
+        #$model->update($data);
+        $model->fill($data); // guarda los datos temporalmente
+        $model->save();// guarda en la tabla directamente
+        return redirect()->route('category.index');
     }
 
     /**
