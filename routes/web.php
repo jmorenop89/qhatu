@@ -25,3 +25,7 @@ Route::group(['prefix'=>'category'],function(){
         'as'=>'category.destroy',
         'uses'=>'CategoryController@destroy']);
 });
+
+Route::group(['prefix'=>'product'],function(){
+    Route::get('/',['as'=>'product.index','uses'=>'ProductController@index']);
+});
